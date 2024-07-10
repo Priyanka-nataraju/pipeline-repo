@@ -9,6 +9,7 @@ pipeline{
         echo "this is Jenkinsfile"
         sh """
         ls -lrt
+        pwd
         """
       }
     }
