@@ -6,11 +6,15 @@ pipeline{
     environment{
         APP='frontend'
         DB_URL = '522.765.23.31'
+
+        GIT_NAME = 'main'
+        CRED_ID = 'github'
+        GIT_URL = 'https://github.com/Priyanka-nataraju/pipeline-repo.git'
     }
     stages{
         // stage('CONFIGURE'){
         //     steps{
-        //         heckout scmGit(branches: [[name: '*/main']], 
+        //         checkout scmGit(branches: [[name: '*/main']], 
         //         extensions: [], 
         //         userRemoteConfigs: [[credentialsId: 'github', 
         //         url: 'https://github.com/Priyanka-nataraju/pipeline-repo.git']]) 
@@ -26,6 +30,19 @@ pipeline{
                 echo "$APP"
                 echo "${APP}"
 
+            }
+        }
+
+        stage('CHECKOUT'){
+            steps{
+                script{
+                    echo "Name = ${env. GIT_NAME}"
+                    echo "cred_id = ${env.CRED_ID}"
+                    echo "GIT_URL = ${env.GIT_URL}"
+                }
+                echo "************"
+                echo "${GIT_NAME}"
+                echo "${GIT_URL}"
             }
         }
     }
