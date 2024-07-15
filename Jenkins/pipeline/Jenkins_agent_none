@@ -1,0 +1,28 @@
+pipeline{
+    agent none
+    stages{
+        stage('BUILD'){
+            agent{
+                label 'slave2'
+            }
+            steps{
+                    sh '''
+                    ls-lrt
+                    pwd
+                    ''''
+            }
+        }
+
+            stage('TEST'){
+            agent{
+                label 'slave1'
+            }
+            steps{
+                    sh '''
+                    echo " testing in slave1"
+                    pwd
+                    ''''
+            }
+        
+    }
+}
