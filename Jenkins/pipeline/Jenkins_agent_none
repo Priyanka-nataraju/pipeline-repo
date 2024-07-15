@@ -9,7 +9,7 @@ pipeline{
                     sh '''
                     ls-lrt
                     pwd
-                    ''''
+                    '''
             }
         }
 
@@ -21,7 +21,7 @@ pipeline{
                     sh '''
                     echo " testing in slave1"
                     pwd
-                    ''''
+                    '''
             }
         
     }
