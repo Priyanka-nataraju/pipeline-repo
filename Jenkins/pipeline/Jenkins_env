@@ -64,7 +64,7 @@ pipeline{
 
         stage('check1'){
             steps{
-                ls -lrt
+                sh"ls -lrt"
             }
         }
     }
