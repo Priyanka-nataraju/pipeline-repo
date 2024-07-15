@@ -1,0 +1,10 @@
+pipeline{
+    agent any
+    stages{
+        stage('CONFIG'){
+            steps{
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Priyanka-nataraju/pipeline-repo.git'
+            }
+        }
+    }
+}
