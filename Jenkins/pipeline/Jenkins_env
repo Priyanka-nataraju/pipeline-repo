@@ -3,7 +3,7 @@ pipeline{
         label 'slave1'
     }
 
-    environemnt{
+    environment{
         APP='frontend'
         DB_URL = '522.765.23.31'
     }
