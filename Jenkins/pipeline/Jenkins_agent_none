@@ -6,23 +6,17 @@ pipeline{
                 label 'slave2'
             }
             steps{
-                    sh '''
-                    ls-lrt
-                    pwd
-                    '''
+                echo " this is building stage in slave2"
             }
         }
 
-            stage('TEST'){
+        stage('TEST'){
             agent{
                 label 'slave1'
             }
             steps{
-                    sh '''
-                    echo " testing in slave1"
-                    pwd
-                    '''
+                echo " this is testing stage in slave1"
             }
-        
+        }
     }
 }
