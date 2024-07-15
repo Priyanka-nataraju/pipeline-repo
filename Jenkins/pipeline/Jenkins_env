@@ -45,5 +45,14 @@ pipeline{
                 echo "${GIT_URL}"
             }
         }
+
+        stage('Check CHECKOUT'){
+            steps{
+                sh """
+                ls -lrt
+                pwd
+                """;
+            }
+        }
     }
 }
