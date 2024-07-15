@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    stages{
+        stage('CHECKOUT'){
+            echo "this is checkout stage"
+        }
+
+        stage('BUILD'){
+            echo "this is Build stage"
+        }
+
+        stage('TEST'){
+            echo "this is Testing stage"
+        }
+    }
+}
