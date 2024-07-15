@@ -1,0 +1,31 @@
+pipeline{
+    agent{
+        label 'slave1'
+    }
+
+    environemnt{
+        APP='frontend'
+        DB_URL = '522.765.23.31'
+    }
+    stages{
+        // stage('CONFIGURE'){
+        //     steps{
+        //         heckout scmGit(branches: [[name: '*/main']], 
+        //         extensions: [], 
+        //         userRemoteConfigs: [[credentialsId: 'github', 
+        //         url: 'https://github.com/Priyanka-nataraju/pipeline-repo.git']]) 
+        //     }
+        // }
+
+        stage('ENVIRONMENT VARIABLE'){
+            steps{
+                script{
+                    echo "${env.APP} = ${env.DB_URL}"
+                }
+
+                echo "$APP"
+
+            }
+        }
+    }
+}
