@@ -54,5 +54,18 @@ pipeline{
                 """;
             }
         }
+
+        stage('checkout 1'){
+            steps{
+                echo "cloning different repo"
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Priyanka-nataraju/first-repo.git'
+            }
+        }
+
+        stage('check1'){
+            steps{
+                ls -lrt
+            }
+        }
     }
 }
