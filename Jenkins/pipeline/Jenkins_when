@@ -39,17 +39,17 @@ pipeline{
             }
         }
 
-        stage('allof')
+        stage('anyof')
         {
             when{
-                allof{
+                anyof{
                     branch 'main'
                     environment name : 'BRANCH', value:'main'
                 }
 
             }
             steps{
-                echo "when allof condition....."
+                echo "when anyof condition....."
             }
         }
     }
