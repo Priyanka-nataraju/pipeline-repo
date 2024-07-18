@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage('Checkout'){
             steps{
-            git branch: 'main', 
+            git branch: ${env.BRANCH}, 
             credentialsId: 'github', 
             url: 'https://github.com/Priyanka-nataraju/first-repo.git'
             }
