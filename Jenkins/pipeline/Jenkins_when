@@ -39,18 +39,18 @@ pipeline{
             }
         }
 
-        stage('anyof')
-        {
-            when{
-                anyof{
-                    branch 'main'
-                    environment name : 'BRANCH', value:'main'
-                }
+        // stage('anyof')
+        // {
+        //     when{
+        //         anyof{
+        //             branch 'main'
+        //             environment name : 'BRANCH', value:'main'
+        //         }
 
-            }
-            steps{
-                echo "when anyof condition....."
-            }
-        }
+        //     }
+        //     steps{
+        //         echo "when anyof condition....."
+        //     }
+        // }
     }
 }
