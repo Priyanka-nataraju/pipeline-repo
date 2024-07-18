@@ -2,8 +2,9 @@ pipeline{
     agent any
 
     environment{
-        BRANCH = 'main'
-        BRANCH1 = 'dev'
+        // BRANCH = 'main'
+        BRANCH ='dev'
+       
     }
 
     stages{
@@ -15,23 +16,24 @@ pipeline{
             }
         }
 
-        stage('BUILD')
-        {
-            when{
-                environment name:'BRANCH', value:'main'
+        // stage('BUILD')
+        // {
+        //     when{
+        //         environment name:'BRANCH', value:'main'
 
-            }
-            steps{
-                echo "BUILDING....."
-            }
+        //     }
+        //     steps{
+        //         echo "BUILDING....."
+        //     }
 
-        }
+        // }
 
         stage('when')
         {
             when{
-                branch  'main'
-                environment name:'BRANCH', value:'main'
+                
+                environment name:'BRANCH', value:'dev'
+            
 
             }
             steps{
