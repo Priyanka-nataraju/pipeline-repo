@@ -42,7 +42,7 @@ pipeline{
         stage('anyof')
         {
             when{
-                branch 'main'
+                
                 anyof{
                     environment name:'BRANCH', value:'dev'
                     environment name:'BRANCH', value:'main'
