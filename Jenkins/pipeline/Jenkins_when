@@ -2,8 +2,8 @@ pipeline{
     agent any
 
     environment{
-        // BRANCH = 'main'
-        BRANCH ='dev'
+        BRANCH = 'main'
+       
        
     }
 
@@ -31,9 +31,9 @@ pipeline{
         stage('when')
         {
             when{
-                
+                not{
                 environment name:'BRANCH', value:'dev'
-            
+                }
 
             }
             steps{
