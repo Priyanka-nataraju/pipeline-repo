@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment{
-        BRANCH ='main'
+        BRANCH :'main'
     }
 
     stages{
@@ -17,7 +17,7 @@ pipeline{
         stage('BUILD')
         {
             when{
-                environment name='BRANCH' value='main'
+                environment name:'BRANCH', value:'main'
 
             }
             steps{
