@@ -3,6 +3,7 @@ pipeline{
 
     environment{
         BRANCH = 'main'
+        DB_URL = 'https://github.com/Priyanka-nataraju/first-repo.git'
     }
 
     stages{
@@ -10,7 +11,7 @@ pipeline{
             steps{
             git branch: "${env.BRANCH}", 
             credentialsId: 'github', 
-            url: 'https://github.com/Priyanka-nataraju/first-repo.git'
+            url: "${env.DB_URL}"
             }
         }
 
@@ -39,8 +40,9 @@ pipeline{
             }
         }
 
-        stage('Example Deploy') {
+        stage('anyof') {
             when {
+                //branch 'main'
                 anyOf {
                     environment name: 'BRANCH', value: 'main'
                     environment name: 'DEPLOY_TO', value: 'staging'
@@ -48,6 +50,19 @@ pipeline{
             }
             steps {
                 echo 'Deploying'
+            }
+        }
+
+        stage('allof'){
+            when{
+                //branch 'main'
+                allof{
+                    environment name: 'BRANCH', value: 'main'
+                    environment url : 'https://github.com/Priyanka-nataraju/first-repo.git'
+                }
+            }
+            steps{
+                echo "allof block"
             }
         }
     }
