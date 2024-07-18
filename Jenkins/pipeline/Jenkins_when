@@ -3,6 +3,7 @@ pipeline{
 
     environment{
         BRANCH = 'main'
+        BRANCH1 = 'dev'
     }
 
     stages{
@@ -23,6 +24,18 @@ pipeline{
             steps{
                 echo "BUILDING....."
             }
+
         }
+
+        stage('when')
+        {
+            when{
+                branch  'main'
+                environment name:'BRANCH', value:'main'
+
+            }
+            steps{
+                echo "when block multiple condition....."
+            }
     }
 }
