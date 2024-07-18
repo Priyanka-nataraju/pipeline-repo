@@ -53,17 +53,17 @@ pipeline{
             }
         }
 
-        stage('allof'){
-            when{
-                //branch 'main'
-                allof{
-                    environment name: 'BRANCH', value: 'main'
+        // stage('allof'){
+        //     when{
+        //         //branch 'main'
+        //         allof{
+        //             environment name: 'BRANCH', value: 'main'
                     
-                }
-            }
-            steps{
-                echo "allof block"
-            }
-        }
+        //         }
+        //     }
+        //     steps{
+        //         echo "allof block"
+        //     }
+        // }
     }
 }
