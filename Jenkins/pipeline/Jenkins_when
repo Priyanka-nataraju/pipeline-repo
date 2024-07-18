@@ -3,8 +3,6 @@ pipeline{
 
     environment{
         BRANCH = 'main'
-       
-       
     }
 
     stages{
@@ -45,7 +43,7 @@ pipeline{
         {
             when{
                 allof{
-                    branch : 'main'
+                    branch 'main'
                     environment name : 'BRANCH', value:'main'
                 }
 
