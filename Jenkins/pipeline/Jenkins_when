@@ -1,21 +1,27 @@
-pipeline {
+pipeline{
     agent any
+
     environment{
-        NAME = 'DEPLOY_TO'
-        VALUE = 'production'
+        BRANCH ='main'
     }
-    stages {
-        stage('Example Build') {
-            steps {
-                echo 'Hello World'
+
+    stages{
+        stage('Checkout'){
+            steps{
+            git branch: 'main', 
+            credentialsId: 'github', 
+            url: 'https://github.com/Priyanka-nataraju/first-repo.git'
             }
         }
-        stage('Example Deploy') {
-            when {
-                environment name: 'DEPLOY_TO', value: 'production'
+
+        stage('BUILD')
+        {
+            when{
+                environment name='BRANCH' value='main'
+
             }
-            steps {
-                echo 'Deploying'
+            steps{
+                echo "BUILDING....."
             }
         }
     }
