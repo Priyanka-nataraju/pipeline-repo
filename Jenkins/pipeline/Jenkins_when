@@ -41,7 +41,7 @@ pipeline{
 
         stage('Example Deploy') {
             when {
-                branch 'main'
+                branch 'master'
                 anyOf {
                     environment name: 'BRANCH', value: 'main'
                     environment name: 'DEPLOY_TO', value: 'staging'
