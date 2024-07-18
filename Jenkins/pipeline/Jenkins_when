@@ -37,5 +37,6 @@ pipeline{
             steps{
                 echo "when block multiple condition....."
             }
+        }
     }
 }
