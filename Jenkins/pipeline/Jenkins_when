@@ -39,17 +39,16 @@ pipeline{
             }
         }
 
-        stage('anyof')
-        {
-            when{
-                
-                anyof{
-                    environment name:'BRANCH', value:'dev'
-                    environment name:'BRANCH', value:'main'
+        stage('Example Deploy') {
+            when {
+                branch 'main'
+                anyOf {
+                    environment name: 'BRANCH', value: 'main'
+                    environment name: 'DEPLOY_TO', value: 'staging'
                 }
             }
-            steps{
-                echo "anyof block"
+            steps {
+                echo 'Deploying'
             }
         }
     }
