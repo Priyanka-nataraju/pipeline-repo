@@ -58,7 +58,7 @@ pipeline{
                 //branch 'main'
                 allof{
                     environment name: 'BRANCH', value: 'main'
-                    environment name:'DB_URL', value : 'https://github.com/Priyanka-nataraju/first-repo.git'
+                    environment DB_URL:'https://github.com/Priyanka-nataraju/first-repo.git'
                 }
             }
             steps{
