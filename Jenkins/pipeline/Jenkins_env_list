@@ -1,0 +1,11 @@
+pipeline{
+    agent any
+    stages{
+        stage('ENVIRONMENT VARIABLES'){
+            steps{
+                 echo " BRANCH_NAME : "${BRANCH_NAME}"
+                 CHANGE_ID : "${CHANGE_ID}"
+            }
+        }
+    }
+}

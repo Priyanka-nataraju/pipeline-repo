@@ -57,6 +57,7 @@ pipeline{
             when {
                 //branch 'main'
                 allOf {
+                    
                     environment name: 'BRANCH', value: 'main'
                     
                 }
