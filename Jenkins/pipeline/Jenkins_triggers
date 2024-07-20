@@ -5,7 +5,7 @@ pipeline{
 
         //cron('* * * * *')//define a regular interval at which the Pipeline should be re-triggered.
 
-        upstream(upstreamProjects: 'ssh_project', threshold: hudson.model.Result.SUCCESS)
+        upstream(upstreamProjects: 'freestyle_job', threshold: hudson.model.Result.SUCCESS)
     }
     stages{
         stage('BUILD'){
