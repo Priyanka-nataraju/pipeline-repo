@@ -1,9 +1,11 @@
 pipeline{
     agent any
     triggers {
-        pollSCM('* * * * *') //Accepts a cron-style string to define a regular interval at which Jenkins should check for new changes in git.
+        //pollSCM('* * * * *') //Accepts a cron-style string to define a regular interval at which Jenkins should check for new changes in git.
 
-        cron('* * * * *')//define a regular interval at which the Pipeline should be re-triggered.
+        //cron('* * * * *')//define a regular interval at which the Pipeline should be re-triggered.
+
+        upstream(upstreamProjects: 'ssh_project', threshold: hudson.model.Result.SUCCESS)
     }
     stages{
         stage('BUILD'){
