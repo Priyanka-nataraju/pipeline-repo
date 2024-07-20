@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "User want to run this job : $USER_INPUT"
+if [[ "$USER_INPUT" == 'true' ]]; then
+ 	echo "Executing the job"
+    pwd
+    ls
+else
+ 	echo "User do not want to execute the job"
+fi
