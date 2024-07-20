@@ -2,7 +2,7 @@ pipeline{
     agent any
     options{
        // timestamps()
-        timeout(time:12, unit:'SECONDS') //this job will be aborted if it executes more than 12 seconds
+        timeout(time:2, unit:'SECONDS') //this job will be aborted if it executes more than 12 seconds
         retry(2) //On failure, retry the entire Pipeline the specified number of times.
         disableConcurrentBuilds() // it will disable the concurrent builds of pipeline
         //disableConcurrentBuilds(abortPrevious : true) //it will abort the previous build
