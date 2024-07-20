@@ -1,13 +1,14 @@
 pipeline{
     agent any
         parameters {
-            booleanParam description: 'do want to run this job', name: 'RUN'
+            booleanParam description: 'do want to run this job', name: 'PRIYA'
             choice choices: ['one', 'two', 'three'], description: 'choose the environment', name: 'Choose_any'
         }
         stages{
           stage('parameters'){
             steps{
-                echo "${params.RUN}"
+                echo "${params.PRIYA}"
+                echo "user is running the job"
                 echo "${params.Choose_any}"
             }
           }
