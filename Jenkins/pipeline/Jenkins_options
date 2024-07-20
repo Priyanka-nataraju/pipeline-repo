@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    options{
+        timestamps()
+
+    }
+    
+    stages{
+        stage('BUILD'){
+            steps{
+                echo" building..."
+            }
+        }
+    }
+}
