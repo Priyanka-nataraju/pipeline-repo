@@ -8,7 +8,7 @@ pipeline{
         DB_URL = '522.765.23.31'
 
         GIT_NAME = 'main'
-        CRED_ID = 'github'
+        CRED_ID = 'PAT_Jenkins'
         GIT_URL = 'https://github.com/Priyanka-nataraju/pipeline-repo.git'
     }
     stages{
@@ -16,7 +16,7 @@ pipeline{
         //     steps{
         //         checkout scmGit(branches: [[name: '*/main']], 
         //         extensions: [], 
-        //         userRemoteConfigs: [[credentialsId: 'github', 
+        //         userRemoteConfigs: [[credentialsId: 'PAT_Jenkins', 
         //         url: 'https://github.com/Priyanka-nataraju/pipeline-repo.git']]) 
         //     }
         // }
@@ -58,7 +58,7 @@ pipeline{
         stage('checkout 1'){
             steps{
                 echo "cloning different repo"
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Priyanka-nataraju/first-repo.git'
+                git branch: 'main', credentialsId: 'PAT_Jenkins', url: 'https://github.com/Priyanka-nataraju/first-repo.git'
             }
         }
 

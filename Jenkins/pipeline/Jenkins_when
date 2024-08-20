@@ -10,7 +10,7 @@ pipeline{
         stage('Checkout'){
             steps{
             git branch: "${env.BRANCH}", 
-            credentialsId: 'github', 
+            credentialsId: 'PAT_Jenkins', 
             url: "${env.DB_URL}"
             }
         }

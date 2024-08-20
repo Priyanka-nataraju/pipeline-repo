@@ -3,15 +3,17 @@ pipeline{
     stages{
         stage('CONFIG'){
             steps{
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Priyanka-nataraju/pipeline-repo.git'
+                git branch: 'main', credentialsId: 'PAT_Jenkins', url: 'https://github.com/Priyanka-nataraju/pipeline-repo.git'
             }
         }
 
         stage("CHECK CONFIG"){
         steps{
             checkout scmGit(branches: [[name: '*/main']], extensions: [], 
-            userRemoteConfigs: [[credentialsId: 'github', 
+            userRemoteConfigs: [[credentialsId: 'PAT_Jenkins', 
             url: 'https://github.com/Priyanka-nataraju/pipeline-repo.git']])
+
+           
         }
       }
     }
