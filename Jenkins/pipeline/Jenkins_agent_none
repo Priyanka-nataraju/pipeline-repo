@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('BUILD'){
             agent{
-                label 'slave2'
+                label 'slave_node2'
             }
             steps{
                 echo " this is building stage in slave2"
@@ -12,7 +12,7 @@ pipeline{
 
         stage('TEST'){
             agent{
-                label 'slave1'
+                label 'slave_node1'
             }
             steps{
                 echo " this is testing stage in slave1"
